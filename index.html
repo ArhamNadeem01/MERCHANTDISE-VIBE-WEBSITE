@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BagStore.</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+        
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+        <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+     <marquee behavior="scroll" scrollamount="10" direction="alternate">
+          <h5 style="font-weight: 500;">Enjoy Free Shipping on Orders Above 3,000. 15 Days Hassle-Free Return.</h5>
+     </marquee>
+
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+          <a class="navbar-brand fw-bold fs-2" href="#">MERCHANTDISE VIBE<span class="text-success">.</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link fs-5" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="./page1.html">New Items</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="./signup.html"><i class="bi bi-person-fill"></i></a></li>
+               </ul>
+               <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+               </form>
+          </div>
+          </div>
+     </nav>
+
+<!-- Product Cards -->
+<div class="container-fluid mt-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+        <!-- Card 1 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0567107113_4bca2fd6-1c4c-467b-9f61-cc2ffece5a14.jpg?v=1760511735" class="card-img-top" alt="Basic Textured Pull-Over">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Textured Pull-Over</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.8,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Basic Textured Pull-Over',8,490,'https://outfitters.com.pk/cdn/shop/files/F0567107113_4bca2fd6-1c4c-467b-9f61-cc2ffece5a14.jpg?v=1760511735')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0543107802.jpg?v=1762409385" class="card-img-top" alt="Basic Zip Up Hoodie">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Zip Up Hoodie</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,990</p>
+                    <button class="btn btn-primary" onclick="addToCart('Basic Zip Up Hoodie',6,990,'https://outfitters.com.pk/cdn/shop/files/F0543107802.jpg?v=1762409385')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0552107618.jpg?v=1759297340" class="card-img-top" alt="Basic Zipper Hoodie">
+                <div class="card-body">
+                    <h5 class="card-title">Basic Zipper Hoodie</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,990</p>
+                    <button class="btn btn-primary" onclick="addToCart('Basic Zipper Hoodie',6,990,'https://outfitters.com.pk/cdn/shop/files/F0552107618.jpg?v=1759297340')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0596107903_2e284cda-6bc1-4b34-b8d0-c21917e6ef81.jpg?v=1762234539" class="card-img-top" alt="Graphic Hoodie">
+                <div class="card-body">
+                    <h5 class="card-title">Graphic Hoodie</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Graphic Hoodie',6,490,'https://outfitters.com.pk/cdn/shop/files/F0596107903_2e284cda-6bc1-4b34-b8d0-c21917e6ef81.jpg?v=1762234539')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0589107901_8c99425d-dfa0-45c9-a9b0-389db3f5448c.jpg?v=1760694898" class="card-img-top" alt="Slogan Print Pull-Over">
+                <div class="card-body">
+                    <h5 class="card-title">Slogan Print Pull-Over</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Slogan Print Pull-Over',6,490,'https://outfitters.com.pk/cdn/shop/files/F0589107901_8c99425d-dfa0-45c9-a9b0-389db3f5448c.jpg?v=1760694898')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0534107416._b18ae5eb-900f-4858-af93-7d5715b236a5.jpg?v=1761643076" class="card-img-top" alt="Embroidered Quarter Zipper Sweatshirt">
+                <div class="card-body">
+                    <h5 class="card-title">Embroidered Quarter Zipper Sweatshirt</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Embroidered Quarter Zipper Sweatshirt',6,490,'https://outfitters.com.pk/cdn/shop/files/F0534107416._b18ae5eb-900f-4858-af93-7d5715b236a5.jpg?v=1761643076')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0530107901._729b72ef-36a6-4ed0-924c-d2f9fdc0a4fb.jpg?v=1762408554" class="card-img-top" alt="Quarter Placket Sweatshirt">
+                <div class="card-body">
+                    <h5 class="card-title">Quarter Placket Sweatshirt</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Quarter Placket Sweatshirt',6,490,'https://outfitters.com.pk/cdn/shop/files/F0530107901._729b72ef-36a6-4ed0-924c-d2f9fdc0a4fb.jpg?v=1762408554')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://outfitters.com.pk/cdn/shop/files/F0581107901_4efd90f7-a0b0-4ac4-84f0-be2c5ce3a80d.jpg?v=1762412279" class="card-img-top" alt="Slogan Print Pull-Over with Piping Detail">
+                <div class="card-body">
+                    <h5 class="card-title">Slogan Print Pull-Over with Piping Detail</h5>
+                    <p class="card-text" style="font-size: 1.1rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600;"><del>Rs.10,000</del> Rs.6,490</p>
+                    <button class="btn btn-primary" onclick="addToCart('Slogan Print Pull-Over with Piping Detail',6,490,'https://outfitters.com.pk/cdn/shop/files/F0581107901_4efd90f7-a0b0-4ac4-84f0-be2c5ce3a80d.jpg?v=1762412279')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      <!-- Pagination -->
+     <nav aria-label="Page navigation example m-2">
+          <ul class="pagination m-2 text-center justify-content-center">
+               <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+               <li class="page-item "><a class="page-link" href="./index.html">1</a></li>
+               <li class="page-item "><a class="page-link" href="./index.html">2</a></li>
+               <li class="page-item "><a class="page-link" href="#">Next</a></li>
+          </ul>
+     </nav>
+      <!-- Pagination -->
+
+<!-- Firebase + App.js -->
+<script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Checkout Icon Button -->
+<div class="checkout-icon" onclick="checkout()">
+  <i class="fa-solid fa-cart-shopping"></i>
+</div>
+  </body>
+</html>
